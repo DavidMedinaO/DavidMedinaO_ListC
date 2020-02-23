@@ -101,7 +101,7 @@ public class CircularSinglyLinkedList<T extends Number & Comparable> implements 
     }
 
     
-    public void route(){
+    public void route(T d){
     
     
     }
