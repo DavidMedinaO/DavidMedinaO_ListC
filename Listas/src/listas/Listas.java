@@ -107,9 +107,10 @@ public class Listas {
                 i = menu();
 
             }else if(i==2){
-            
-                    myCSLP.deleteCan(new Videos("de"));
-                    System.out.println("holaaaaaaaaaaaaaaaaaaaaaaaa");
+                    System.out.println("QUE CANCION DESEA ELIMINAR");
+                    String cancion = teclado.next();
+                    myCSLP.deleteCan(cancion);
+                     System.out.println(ANSI_BLUE+"cancion eliminada"+ANSI_RESET);
                     i= menu(); 
             }else if(i== 3){
             

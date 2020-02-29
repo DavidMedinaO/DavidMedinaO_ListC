@@ -163,26 +163,33 @@ public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T>
         return data;
     }
     
-     public void deleteCan(Videos d)  {
+     public void deleteCan(String d)  {
          
          Node<Videos> current = (Node<Videos>) this.head;
-         if (d.equals(current.getData())) {
+         Node<Videos> current2 = (Node<Videos>) this.head;
+         if (d.equals(current.getData().getCancion())) {
 
              this.head = current.getNextNode();
+             this.tail.setNextNode(head);
 
          }
+         int i =0;
+         while(current != head){
+                 if(i>0){
+                 
+                 String dat = current.getData().getCancion();  
+                 current2= current2.getNextNode(); 
+                 }
+                  current = current.getNextNode();
+                 if(d.equals(current.getData().getCancion())){
+                 
+                     current2.setNextNode(current2.getNextNode().getNextNode());
+                     System.out.println("hola");
+                 
+                 }
          
-//         while(current != head){
-//                    
-//                 if(d == current.getNextNode().getData()){
-//                 
-//                     current.setNextNode(current.getNextNode().getNextNode());
-//                     System.out.println("hola");
-//                 
-//                 }
-//         
-//            current = current.getNextNode(); 
-//         }
+         
+         }
      }
          
       public void reproducir() throws InterruptedException{
