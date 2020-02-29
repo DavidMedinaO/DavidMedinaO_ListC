@@ -15,7 +15,7 @@ public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T>
 
     Node<T> head;
     Node<T> tail;
-
+    
     public CircularSinglyLinkedList() {
         head = tail = null;
     }
@@ -163,35 +163,34 @@ public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T>
         return data;
     }
     
-     public void deleteCan(String d)  {
-         
-         Node<Videos> current = (Node<Videos>) this.head;
-         Node<Videos> current2 = (Node<Videos>) this.head;
-         if (d.equals(current.getData().getCancion())) {
+    public void deleteCan(String d) {
 
-             this.head = current.getNextNode();
-             this.tail.setNextNode(head);
+        Node<Videos> current = (Node<Videos>) this.head;
+        Node<Videos> current2 = (Node<Videos>) this.head;
+        if (d.equals(current.getData().getCancion())) {
 
-         }
-         int i =0;
-         current = current.getNextNode();
-         while(current != head){
-                 if(i>0){
-                 
-                 String dat = current.getData().getCancion();  
-                 current2= current2.getNextNode(); 
-                 }
-                  
-                 if(d.equals(current.getData().getCancion())){
-                 
-                     current2.setNextNode(current2.getNextNode().getNextNode());
-                     System.out.println("hola");
-                 
-                 }
-         current = current.getNextNode();
-         i=i+1; 
-         }
-     }
+            this.head = current.getNextNode();
+            this.tail.setNextNode(head);
+
+        }
+        int i = 0;
+        current = current.getNextNode();
+        while (current != head) {
+            if (i > 0) {
+
+                String dat = current.getData().getCancion();
+                current2 = current2.getNextNode();
+            }
+
+            if (d.equals(current.getData().getCancion())) {
+
+                current2.setNextNode(current2.getNextNode().getNextNode());
+
+            }
+            current = current.getNextNode();
+            i = i + 1;
+        }
+    }
          
       public void reproducir() throws InterruptedException{
         
@@ -203,7 +202,31 @@ public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T>
             TimeUnit.SECONDS.sleep(3);
         }while (current != head);
 
-    }    
+    }   
+      
+      
+    public void update(String newc, String oldc) {
+        Node<Videos> current = (Node<Videos>) this.head;
+
+        if (oldc.equals(current.getData().getCancion())) {
+
+            current.getData().setCancion(newc);
+
+        }
+
+        current = current.getNextNode();
+        while (current != head) {
+
+            if (oldc.equals(current.getData().getCancion())) {
+
+                current.getData().setCancion(newc);
+
+            }
+            current = current.getNextNode();
+
+        }
+
+    }
          
  }
      

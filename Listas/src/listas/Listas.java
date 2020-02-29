@@ -112,12 +112,19 @@ public class Listas {
                     myCSLP.deleteCan(cancion);
                      System.out.println(ANSI_BLUE+"cancion eliminada"+ANSI_RESET);
                     i= menu(); 
-            }else if(i== 3){
-            
-            
-            
-            
-            }else if(i == 4){
+            } else if (i == 3) {
+                System.out.println("QUE CANCION DESEA ACTUALIZAR (LA ANTIGUA)");
+                String OLDcancion = teclado.next();
+
+                System.out.println("INGRESE LA NUEVA CANCION");
+                String NEWcancion = teclado.next();
+                myCSLP.update(NEWcancion, OLDcancion);
+                
+                System.out.println(ANSI_BLUE+"cancion actualizada"+ANSI_RESET);
+                
+                i = menu();
+
+            } else if (i == 4) {
             
                 System.out.println(ANSI_BLUE+"LISTA DE CANCIONES: " +ANSI_RESET + myCSLP.showCancion());
                 System.out.println("");
