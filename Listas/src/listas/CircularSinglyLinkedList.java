@@ -100,10 +100,45 @@ public class CircularSinglyLinkedList<T extends Number & Comparable> implements 
         current.setNextNode(newNode);
     }
 
-    
-    public void route(T d){
-    
-    
-    }
+     public String NodoRoute(T d) {
 
+        String data = "";
+        if (d.compareTo(head.getData()) == 0) {
+
+            data = showData();
+            return data;
+
+        }
+        Node<T> current = head.getNextNode();
+
+        while (current != head) {
+            data = "";
+            Node<T> nodoe = current;
+            do {
+                data = data + nodoe.getData() + " ";
+                nodoe = nodoe.getNextNode();
+            } while (nodoe != current);
+
+            if (d.compareTo(current.getData()) == 0) {
+
+                return data;
+            }
+            current = current.getNextNode();
+
+        }
+
+        return data;
+    }
+    
+    public void  unirlist(CircularSinglyLinkedList<T> list2){
+    
+        this.tail.setNextNode(list2.head);
+        list2.tail.setNextNode(this.head);
+       
+        
+        
+        
+
+    }
+     
 }

@@ -21,29 +21,17 @@ public class Listas {
     public static void main(String[] args) {
         // TODO code application logic here
         
-//        CircularDoublyLinkedList<Integer> myCDLL = new CircularDoublyLinkedList<>();
-//        myCDLL.addLast(99);
-//        myCDLL.addLast(88);
-//        myCDLL.addLast(77);
-//        myCDLL.addLast(66);
-//        myCDLL.addLast(55);
-//
-//        System.out.println("Contenido de la lista simple: " + myCDLL.showData());
-//        try {
-//            myCDLL.delete();
-//            myCDLL.delete();
-//            myCDLL.delete();
-//            myCDLL.delete();
-//            myCDLL.delete();
-//
-//        } catch (Exception e) {
-//            System.out.println("Error: " + e.getMessage());
-//        }
-//
-//        System.out.println("Contenido de la lista simple despues del borrado: " + myCDLL.showData());
+
+
+        CircularSinglyLinkedList<Integer> myCSLL2 = new CircularSinglyLinkedList<>();
+        // Lista numero 2 para validar el punto 3 de listas circular simple
+        myCSLL2.addOrdered(50);
+        myCSLL2.addOrdered(60);
+        myCSLL2.addOrdered(70);
+        myCSLL2.addOrdered(80);
+        myCSLL2.addOrdered(90);
 
         CircularSinglyLinkedList<Integer> myCSLL = new CircularSinglyLinkedList<>();
-        
         // Variables para validar el punto 1
         myCSLL.addOrdered(10);
         myCSLL.addOrdered(89);
@@ -51,14 +39,25 @@ public class Listas {
         myCSLL.addOrdered(40);
         myCSLL.addOrdered(178);
         System.out.println("LISTA ORGANIZADA DE MAYOR A MENOR: " + myCSLL.showData());// Punto 1
-
-        //hola
+        int nodoe = 40;// Variable para validar el punto 2   
+        System.out.println("MOSTRAR LISTA A PARTIR DE UN NODO ESPECIFICO: " + myCSLL.NodoRoute(nodoe));// Punto 2
+        myCSLL.unirlist(myCSLL2);//Punto 3
+        System.out.println("LISTA RESULTANTE AL UNIR LAS DOS LISTAS: " + myCSLL.showData());//Mostrar el punto 3
+  
         
         
-       // System.out.println("Contenido de la lista simple despues de borrar: " + myCSLL.showData());
+        
+        
+        CircularDoublyLinkedList<Integer> myCDLL = new CircularDoublyLinkedList<>();
+        myCDLL.addLast(99);
+        myCDLL.addLast(88);
+        myCDLL.addLast(77);
+        myCDLL.addLast(66);
+        myCDLL.addLast(55);
 
-       
-       //holaaaaaaaaaaaaaaaaaaaaa
+        System.out.println("Contenido de la lista doble: " + myCDLL.showData());
+
+        System.out.println("Contenido de la lista doble despues del borrado: " + myCDLL.showData());
 
     }
 
