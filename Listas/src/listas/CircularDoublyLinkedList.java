@@ -5,6 +5,9 @@
  */
 package listas;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author s103e28
@@ -131,6 +134,33 @@ public class CircularDoublyLinkedList<T extends Number & Comparable> implements 
         } while (aux != head);
         return false;
 
+    }
+    
+    public CircularDoublyLinkedList<T> div(T d) {
+
+        CircularDoublyLinkedList<T> myCDLL2 = new CircularDoublyLinkedList<>();
+
+        DoubleNode<T> aux = this.head;
+        do {
+            if (aux.getData() == d) {
+                DoubleNode<T> current = aux;
+                aux = this.head;
+                do {
+
+                    myCDLL2.add(aux.getData());
+
+                    try {
+                        delete();
+                    } catch (Exception ex) {
+                        Logger.getLogger(CircularDoublyLinkedList.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    aux = aux.getNextNode();
+                } while (aux != current);
+            }
+            aux = aux.getNextNode();
+        } while (aux != head);
+
+        return myCDLL2;
     }
 
 }

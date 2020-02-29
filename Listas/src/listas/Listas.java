@@ -71,14 +71,18 @@ public class Listas {
         }
 
 
-        System.out.println("CONTENIDO LISTA DOBLE DE MENOR A MAYOR: " + myCDLL.showData());// Punto 1
+        System.out.println("CONTENIDO LISTA DOBLE DE MENOR A MAYOR: " + myCDLL.showData());// PUNTO 1
 
         int numexist= 90;// Variable para validar el punto 2
-        System.out.println("EL DATO "+numexist+" EXISTE? "+ myCDLL.existe(90));// Punto 2
+        System.out.println("EL DATO "+numexist+" EXISTE? "+ myCDLL.existe(90));// PUNTO 2
         
         
+        System.out.println("LISTA 2: "+ myCDLL.div(66).showData()); // PUNTO 3
         
+        System.out.println("LISTA 1: "+ myCDLL.showData());
 
     }
+    
+
 
 }
