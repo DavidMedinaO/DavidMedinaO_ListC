@@ -47,16 +47,18 @@ public class Listas {
         // Variables para validar el punto 1
         myCSLL.addOrdered(10);
         myCSLL.addOrdered(89);
-        myCSLL.addOrdered(1);
+        myCSLL.addOrdered(12);
         myCSLL.addOrdered(40);
         myCSLL.addOrdered(178);
         System.out.println("LISTA ORGANIZADA DE MAYOR A MENOR: " + myCSLL.showData());// Punto 1
 
+        //hola
         
         
-        
-        System.out.println("Contenido de la lista simple despues de borrar: " + myCSLL.showData());
+       // System.out.println("Contenido de la lista simple despues de borrar: " + myCSLL.showData());
 
+       
+       //holaaaaaaaaaaaaaaaaaaaaa
 
     }
 
