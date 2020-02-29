@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Stack;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 /**
  *
  * @author DAVID MEDINA OROZCO
@@ -18,7 +19,7 @@ public class Listas {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
         
         Scanner teclado = new Scanner (System.in); 
@@ -100,6 +101,7 @@ public class Listas {
 
                 System.out.println("INGRESE EL NOMBRE DE LA CANCION:");
                 myCSLP.add(new Videos(teclado.next()));
+               
                 System.out.println(ANSI_BLUE+"Cancion ingresada"+ ANSI_RESET);
                 System.out.println("");
                 i = menu();
@@ -120,7 +122,16 @@ public class Listas {
             
             }else if(i == 5){
             
-            
+                    myCSLP.reproducir();
+                    
+                    System.out.println("FIN DE LA LISTA,iNICIAR NUEVAMENTE? S/N");
+                    String seg= teclado.next();
+                    
+                    
+                    if(seg.equals("N")){
+                    i= menu(); }else{}
+                    
+                    
             }else if(i==6){
             
                 i= 8; 

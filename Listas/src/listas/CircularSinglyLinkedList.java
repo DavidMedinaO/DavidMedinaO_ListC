@@ -5,6 +5,8 @@
  */
 package listas;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  *
  * @author s103e28
@@ -181,10 +183,20 @@ public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T>
 //         
 //         
 //         }
+     }
          
+      public void reproducir() throws InterruptedException{
+        
+        Node<Videos> current = (Node<Videos>) this.head;
+      
+        do{
+            System.out.println("Reproduciendo: "+ current.getData().getCancion());
+            current = current.getNextNode();
+            TimeUnit.SECONDS.sleep(3);
+        }while (current != head);
+
+    }    
          
-         
-         
-    }
+ }
      
-}
+
