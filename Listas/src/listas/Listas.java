@@ -92,7 +92,7 @@ public class Listas {
         CircularSinglyLinkedList<Videos> myCSLP = new CircularSinglyLinkedList<>();
 
         myCSLP.add(new Videos("Callaita"));
-        myCSLP.add(new Videos("Better Now"));
+        myCSLP.add(new Videos("Despacito"));
         myCSLP.add(new Videos("Blanco"));
 
         int i = menu();
