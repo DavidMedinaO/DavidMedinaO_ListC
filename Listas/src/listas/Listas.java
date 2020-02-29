@@ -24,7 +24,7 @@ public class Listas {
         
         Scanner teclado = new Scanner (System.in); 
         
-        System.out.println("LISTAS SIMPLES");
+        System.out.println(ANSI_PURPLE +"LISTAS SIMPLES" + ANSI_RESET);
         CircularSinglyLinkedList<Integer> myCSLL2 = new CircularSinglyLinkedList<>();
         try {
             // Lista numero 2 para validar el punto 3 de listas circular simple
@@ -57,7 +57,7 @@ public class Listas {
   
         
         System.out.println("");
-        System.out.println("LISTAS DOBLES");
+        System.out.println(ANSI_PURPLE+"LISTAS DOBLES"+ANSI_RESET);
         //LISTAS DOBLES
         
         CircularDoublyLinkedList<Integer> myCDLL = new CircularDoublyLinkedList<>();
@@ -82,7 +82,7 @@ public class Listas {
         System.out.println("LISTA 2: "+ myCDLL.div(66).showData()); // PUNTO 3
         
         System.out.println("LISTA 1: "+ myCDLL.showData());
-        
+        System.out.println("");
         
         
         
@@ -94,24 +94,24 @@ public class Listas {
         myCSLP.add(new Videos("Callaita"));
         myCSLP.add(new Videos("Better Now"));
         myCSLP.add(new Videos("Blanco"));
-       
+
         int i = menu();
         while (i < 7) {
             if (i == 1) {
 
                 System.out.println("INGRESE EL NOMBRE DE LA CANCION:");
                 myCSLP.add(new Videos(teclado.next()));
-               
-                System.out.println(ANSI_BLUE+"Cancion ingresada"+ ANSI_RESET);
+
+                System.out.println(ANSI_BLUE + "Cancion ingresada" + ANSI_RESET);
                 System.out.println("");
                 i = menu();
 
-            }else if(i==2){
-                    System.out.println("QUE CANCION DESEA ELIMINAR");
-                    String cancion = teclado.next();
-                    myCSLP.deleteCan(cancion);
-                     System.out.println(ANSI_BLUE+"cancion eliminada"+ANSI_RESET);
-                    i= menu(); 
+            } else if (i == 2) {
+                System.out.println("QUE CANCION DESEA ELIMINAR");
+                String cancion = teclado.next();
+                myCSLP.deleteCan(cancion);
+                System.out.println(ANSI_BLUE + "cancion eliminada" + ANSI_RESET);
+                i = menu();
             } else if (i == 3) {
                 System.out.println("QUE CANCION DESEA ACTUALIZAR (LA ANTIGUA)");
                 String OLDcancion = teclado.next();
@@ -119,22 +119,22 @@ public class Listas {
                 System.out.println("INGRESE LA NUEVA CANCION");
                 String NEWcancion = teclado.next();
                 myCSLP.update(NEWcancion, OLDcancion);
-                
-                System.out.println(ANSI_BLUE+"cancion actualizada"+ANSI_RESET);
-                
+
+                System.out.println(ANSI_BLUE + "cancion actualizada" + ANSI_RESET);
+
                 i = menu();
 
             } else if (i == 4) {
-            
-                System.out.println(ANSI_BLUE+"LISTA DE CANCIONES: " +ANSI_RESET + myCSLP.showCancion());
+
+                System.out.println(ANSI_BLUE + "LISTA DE CANCIONES: " + ANSI_RESET + myCSLP.showCancion());
                 System.out.println("");
-                i= menu();
-            
-            }else if (i == 5) {
+                i = menu();
+
+            } else if (i == 5) {
 
                 myCSLP.reproducir();
 
-                System.out.println(ANSI_BLUE+"FIN DE LA LISTA,iNICIAR NUEVAMENTE? S/N"+ANSI_RESET);
+                System.out.println(ANSI_BLUE + "FIN DE LA LISTA,iNICIAR NUEVAMENTE? S/N" + ANSI_RESET);
                 String seg = teclado.next();
 
                 if (seg.equals("N")) {
@@ -144,12 +144,12 @@ public class Listas {
 
             } else if (i == 6) {
 
-                i= 8; 
-            
+                i = 8;
+
             }
 
         }
-         
+
           
          
 
@@ -158,7 +158,7 @@ public class Listas {
     
     public static int menu(){
         Scanner teclado = new Scanner (System.in); 
-        System.out.println("LISTA DE REPRODUCCION DE VIDEO");
+        System.out.println(ANSI_PURPLE+"LISTA DE REPRODUCCION DE VIDEO"+ANSI_RESET);
         System.out.println("1.Agregar video");
         System.out.println("2.Eliminar video");
         System.out.println("3.Actualizar");
@@ -173,7 +173,7 @@ public class Listas {
     
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_RESET = "\u001B[0m";
-    
+     public static final String ANSI_PURPLE = "\u001B[35m";
 
 
 }
