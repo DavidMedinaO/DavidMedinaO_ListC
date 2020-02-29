@@ -174,21 +174,22 @@ public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T>
 
          }
          int i =0;
+         current = current.getNextNode();
          while(current != head){
                  if(i>0){
                  
                  String dat = current.getData().getCancion();  
                  current2= current2.getNextNode(); 
                  }
-                  current = current.getNextNode();
+                  
                  if(d.equals(current.getData().getCancion())){
                  
                      current2.setNextNode(current2.getNextNode().getNextNode());
                      System.out.println("hola");
                  
                  }
-         
-         
+         current = current.getNextNode();
+         i=i+1; 
          }
      }
          
