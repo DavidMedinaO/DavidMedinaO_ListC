@@ -74,17 +74,6 @@ public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T>
         return data;
     }
     
-     public String showCancion() {
-        String data = "";
-        Node<T> current = this.head;
-        do{
-            data = data + current.getData() + " ";
-            current = current.getNextNode();
-        }while (current != head);
-        return data;
-    }
-    
-    
     @Override
     public void addOrdered(T d) throws Exception {
         if (isEmpty() || d.compareTo(head.getData()) == 1) {
@@ -158,6 +147,44 @@ public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T>
         
         
 
+    }
+    
+    ////////CASO PRACTICO
+    
+    public String showCancion() {
+        String data = "";
+        Node<Videos> current = (Node<Videos>) this.head;
+        do{
+            data = data + current.getData().getCancion() + " / ";
+            current = current.getNextNode();
+        }while (current != head);
+        return data;
+    }
+    
+     public void deleteCan(Videos d)  {
+         
+         Node<Videos> current = (Node<Videos>) this.head;
+         if (d.compareTo(current.getData().getCancion()) == 0) {
+
+             this.head = current.getNextNode();
+
+         }
+         
+//         while(current != head){
+//         
+//                 if(d.compareTo(current.getData().getCancion())==0){
+//                 
+//                     this.head = current.getNextNode().getData();
+//                 
+//                 
+//                 }
+//         
+//         
+//         }
+         
+         
+         
+         
     }
      
 }

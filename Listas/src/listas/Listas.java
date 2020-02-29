@@ -106,7 +106,7 @@ public class Listas {
 
             }else if(i==2){
             
-            
+                    myCSLP.deleteCan(new Videos("de"));
             }else if(i== 3){
             
             
@@ -114,7 +114,7 @@ public class Listas {
             
             }else if(i == 4){
             
-                System.out.println("LISTA DE CANCIONES: " + myCSLP.showData());
+                System.out.println(ANSI_BLUE+"LISTA DE CANCIONES: " +ANSI_RESET + myCSLP.showCancion());
                 System.out.println("");
                 i= menu();
             
@@ -123,7 +123,7 @@ public class Listas {
             
             }else if(i==6){
             
-                System.out.println("H");
+                i= 8; 
             
             }
 
