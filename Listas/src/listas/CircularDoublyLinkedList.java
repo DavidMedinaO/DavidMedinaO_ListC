@@ -122,6 +122,17 @@ public class CircularDoublyLinkedList<T extends Number & Comparable> implements 
     }
     
     
+    public String showCancion() {
+        String data = "";
+        DoubleNode<T> current = this.head;
+        do {
+            data = data + current.getData() + " ";
+            current = current.getNextNode();
+        } while (current != head);
+        return data;
+    }
+    
+    
     public boolean existe(T d) {
 
         DoubleNode<T> aux = this.head;

@@ -9,7 +9,7 @@ package listas;
  *
  * @author s103e28
  */
-public class CircularSinglyLinkedList<T extends Number & Comparable> implements Ilist<T> {
+public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T> {
 
     Node<T> head;
     Node<T> tail;
@@ -143,7 +143,7 @@ public class CircularSinglyLinkedList<T extends Number & Comparable> implements 
     
         this.tail.setNextNode(list2.head);
         list2.tail.setNextNode(this.head);
-       
+    
         
         
         

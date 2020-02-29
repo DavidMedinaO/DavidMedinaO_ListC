@@ -8,10 +8,10 @@ package listas;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Stack;
-
+import java.util.Scanner;
 /**
  *
- * @author s208e19
+ * @author DAVID MEDINA OROZCO
  */
 public class Listas {
 
@@ -21,7 +21,8 @@ public class Listas {
     public static void main(String[] args) {
         // TODO code application logic here
         
-
+        Scanner teclado = new Scanner (System.in); 
+        
         System.out.println("LISTAS SIMPLES");
         CircularSinglyLinkedList<Integer> myCSLL2 = new CircularSinglyLinkedList<>();
         try {
@@ -80,8 +81,77 @@ public class Listas {
         System.out.println("LISTA 2: "+ myCDLL.div(66).showData()); // PUNTO 3
         
         System.out.println("LISTA 1: "+ myCDLL.showData());
+        
+        
+        
+        
+        // CASO PRACTICO
+        
+        
+        CircularSinglyLinkedList<Videos> myCSLP = new CircularSinglyLinkedList<>();
+
+        myCSLP.add(new Videos("Callaita"));
+        myCSLP.add(new Videos("Better Now"));
+        myCSLP.add(new Videos("Blanco"));
+       
+        int i = menu();
+        while (i < 7) {
+            if (i == 1) {
+
+                System.out.println("INGRESE EL NOMBRE DE LA CANCION:");
+                myCSLP.add(new Videos(teclado.next()));
+                System.out.println(ANSI_BLUE+"Cancion ingresada"+ ANSI_RESET);
+                System.out.println("");
+                i = menu();
+
+            }else if(i==2){
+            
+            
+            }else if(i== 3){
+            
+            
+            
+            
+            }else if(i == 4){
+            
+                System.out.println("LISTA DE CANCIONES: " + myCSLP.showData());
+                System.out.println("");
+                i= menu();
+            
+            }else if(i == 5){
+            
+            
+            }else if(i==6){
+            
+                System.out.println("H");
+            
+            }
+
+        }
+         
+          
+         
 
     }
+    
+    
+    public static int menu(){
+        Scanner teclado = new Scanner (System.in); 
+        System.out.println("LISTA DE REPRODUCCION DE VIDEO");
+        System.out.println("1.Agregar video");
+        System.out.println("2.Eliminar video");
+        System.out.println("3.Actualizar");
+        System.out.println("4.Ver lista");
+        System.out.println("5.Reproduccion automatica");
+        System.out.println("6.salir ");
+        System.out.println("Ingrese una opcion de 1 a 6: ");
+        int opcion = Integer.parseInt(teclado.next());
+        
+        return opcion; 
+        }
+    
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_RESET = "\u001B[0m";
     
 
 
