@@ -166,22 +166,22 @@ public class CircularSinglyLinkedList<T extends  Comparable> implements Ilist<T>
      public void deleteCan(Videos d)  {
          
          Node<Videos> current = (Node<Videos>) this.head;
-         if (d.compareTo(current.getData().getCancion()) == 0) {
+         if (d.equals(current.getData())) {
 
              this.head = current.getNextNode();
 
          }
          
 //         while(current != head){
-//         
-//                 if(d.compareTo(current.getData().getCancion())==0){
+//                    
+//                 if(d == current.getNextNode().getData()){
 //                 
-//                     this.head = current.getNextNode().getData();
-//                 
+//                     current.setNextNode(current.getNextNode().getNextNode());
+//                     System.out.println("hola");
 //                 
 //                 }
 //         
-//         
+//            current = current.getNextNode(); 
 //         }
      }
          

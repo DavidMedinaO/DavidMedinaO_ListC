@@ -109,6 +109,8 @@ public class Listas {
             }else if(i==2){
             
                     myCSLP.deleteCan(new Videos("de"));
+                    System.out.println("holaaaaaaaaaaaaaaaaaaaaaaaa");
+                    i= menu(); 
             }else if(i== 3){
             
             
@@ -120,20 +122,20 @@ public class Listas {
                 System.out.println("");
                 i= menu();
             
-            }else if(i == 5){
-            
-                    myCSLP.reproducir();
-                    
-                    System.out.println("FIN DE LA LISTA,iNICIAR NUEVAMENTE? S/N");
-                    String seg= teclado.next();
-                    
-                    
-                    if(seg.equals("N")){
-                    i= menu(); }else{}
-                    
-                    
-            }else if(i==6){
-            
+            }else if (i == 5) {
+
+                myCSLP.reproducir();
+
+                System.out.println(ANSI_BLUE+"FIN DE LA LISTA,iNICIAR NUEVAMENTE? S/N"+ANSI_RESET);
+                String seg = teclado.next();
+
+                if (seg.equals("N")) {
+                    i = menu();
+                } else {
+                }
+
+            } else if (i == 6) {
+
                 i= 8; 
             
             }
