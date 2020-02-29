@@ -27,7 +27,7 @@ public interface Ilist<T> {
     *Agregar un dato ordenado de menor a mayor
     *@param el dato
      */
-    public void addOrdered(T d);
+    public void addOrdered (T d) throws Exception ;
 
     /*
     *Verificar si la lisa esta vacia

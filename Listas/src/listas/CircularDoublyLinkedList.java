@@ -9,7 +9,7 @@ package listas;
  *
  * @author s103e28
  */
-public class CircularDoublyLinkedList<T> implements Ilist<T> {
+public class CircularDoublyLinkedList<T extends Number & Comparable> implements Ilist<T> {
 
     DoubleNode<T> head;
 
@@ -53,8 +53,35 @@ public class CircularDoublyLinkedList<T> implements Ilist<T> {
     }
 
     @Override
-    public void addOrdered(T d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addOrdered(T d) throws Exception{
+
+        if (isEmpty() || d.compareTo(head.getData()) == -1) {
+            add(d);
+
+            return;
+        }
+        
+        DoubleNode<T> aux = this.head;
+        do{
+                if(aux.getData()== d){
+                
+                    throw new Exception("DATO REPETIDO, YA EXISTE EN LA LISTA");
+                }
+               aux = aux.getNextNode();
+        }while(aux != head); 
+        
+        DoubleNode<T> current = head.getNextNode();
+        DoubleNode<T> newNode;
+
+        while (current != head && d.compareTo(current.getData()) == 1) {
+
+            current = current.getNextNode();
+        }
+
+        newNode = new DoubleNode(d, current.getPreviousNode(), current);
+        current.getPreviousNode().setNextNode(newNode);
+        current.setPreviousNode(newNode);
+
     }
 
     @Override
@@ -89,6 +116,21 @@ public class CircularDoublyLinkedList<T> implements Ilist<T> {
             current = current.getNextNode();
         } while (current != head);
         return data;
+    }
+    
+    
+    public boolean existe(T d) {
+
+        DoubleNode<T> aux = this.head;
+        do {
+            if (aux.getData() == d) {
+
+                return true;
+            }
+                aux = aux.getNextNode();
+        } while (aux != head);
+        return false;
+
     }
 
 }

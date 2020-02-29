@@ -76,7 +76,7 @@ public class CircularSinglyLinkedList<T extends Number & Comparable> implements 
     
     
     @Override
-    public void addOrdered(T d) {
+    public void addOrdered(T d) throws Exception {
         if (isEmpty() || d.compareTo(head.getData()) == 1) {
             add(d);
 
@@ -87,6 +87,15 @@ public class CircularSinglyLinkedList<T extends Number & Comparable> implements 
 
             return;
         }
+        
+        Node<T> aux = this.head;
+        do{
+                if(aux.getData()== d){
+                
+                    throw new Exception("DATO REPETIDO, YA EXISTE EN LA LISTA");
+                }
+               aux = aux.getNextNode();
+        }while(aux != head); 
 
         Node<T> current = head;
         Node<T> newNode;
